@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:weather_app_bloc/data/weather_repository.dart';
 import 'package:weather_app_bloc/pages/weather_search_page.dart';
+import 'package:weather_app_bloc/states/bloc/weather_bloc.dart';
 
-import 'states/cubit/weather_cubit.dart';
+// import 'states/cubit/weather_cubit.dart';
 
 void main() {
   runApp(const MyApp());
@@ -21,7 +22,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: BlocProvider(
-          create: (context) => WeatherCubit(FakeWeatherRepository()),
+          create: (context) => WeatherBloc(FakeWeatherRepository()),
           child: const WeatherSearchPage()),
     );
   }
